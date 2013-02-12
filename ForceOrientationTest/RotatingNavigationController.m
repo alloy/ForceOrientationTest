@@ -77,14 +77,12 @@ angleOfOrientation(UIInterfaceOrientation orientation) {
   [super pushViewController:viewController animated:animated];
 }
 
-// TODO Segfaults
-//
-//- (UIViewController *)popViewControllerAnimated:(BOOL)animated;
-//{
-  //UIViewController *viewController = self.viewControllers[self.viewControllers.count - 2];
-  //[self forceOrientationChangeIfNecessary:viewController.supportedInterfaceOrientations];
-  //[super popViewControllerAnimated:animated];
-//}
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated;
+{
+  UIViewController *viewController = self.viewControllers[self.viewControllers.count - 2];
+  [self forceOrientationChangeIfNecessary:viewController.supportedInterfaceOrientations];
+  return [super popViewControllerAnimated:animated];
+}
 
 // Setting the status bar orientation *only* works if `shouldAutorotate`
 // returns `NO`.
