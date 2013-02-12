@@ -64,17 +64,15 @@
   [super pushViewController:viewController animated:animated];
 }
 
-// TODO Segfaults
-//
-//- (UIViewController *)popViewControllerAnimated:(BOOL)animated;
-//{
-  //UIViewController *viewController = self.viewControllers[self.viewControllers.count - 2];
-  //DummyController *dummy = [[DummyController alloc] initWithSupportedInterfaceOrientations:viewController.supportedInterfaceOrientations];
-  //[self presentViewController:dummy animated:NO completion:NULL];
-  //[dummy dismissViewControllerAnimated:NO completion:NULL];
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated;
+{
+  UIViewController *viewController = self.viewControllers[self.viewControllers.count - 2];
+  DummyController *dummy = [[DummyController alloc] initWithSupportedInterfaceOrientations:viewController.supportedInterfaceOrientations];
+  [self presentViewController:dummy animated:NO completion:NULL];
+  [dummy dismissViewControllerAnimated:NO completion:NULL];
 
-  //[super popViewControllerAnimated:animated];
-//}
+  return [super popViewControllerAnimated:animated];
+}
 
 - (BOOL)shouldAutorotate;
 {
