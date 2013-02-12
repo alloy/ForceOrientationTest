@@ -1,0 +1,313 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5100D4D916CA9E09004E2D5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5100D4D816CA9E09004E2D5E /* UIKit.framework */; };
+		5100D4DB16CA9E09004E2D5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5100D4DA16CA9E09004E2D5E /* Foundation.framework */; };
+		5100D4DD16CA9E09004E2D5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5100D4DC16CA9E09004E2D5E /* CoreGraphics.framework */; };
+		5100D4E316CA9E09004E2D5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5100D4E116CA9E09004E2D5E /* InfoPlist.strings */; };
+		5100D4E516CA9E09004E2D5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5100D4E416CA9E09004E2D5E /* main.m */; };
+		5100D4E916CA9E09004E2D5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5100D4E816CA9E09004E2D5E /* AppDelegate.m */; };
+		5100D4EB16CA9E09004E2D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5100D4EA16CA9E09004E2D5E /* Default.png */; };
+		5100D4ED16CA9E09004E2D5E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5100D4EC16CA9E09004E2D5E /* Default@2x.png */; };
+		5100D4EF16CA9E09004E2D5E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5100D4EE16CA9E09004E2D5E /* Default-568h@2x.png */; };
+		5100D4F716CA9E9A004E2D5E /* RotatingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5100D4F616CA9E9A004E2D5E /* RotatingNavigationController.m */; };
+		5100D4FA16CA9EBA004E2D5E /* AllOrientationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5100D4F916CA9EBA004E2D5E /* AllOrientationsViewController.m */; };
+		5100D4FD16CA9ED5004E2D5E /* LandscapeOrientationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5100D4FC16CA9ED5004E2D5E /* LandscapeOrientationViewController.m */; };
+		5100D50016CA9F65004E2D5E /* PortraitOrientationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5100D4FF16CA9F65004E2D5E /* PortraitOrientationViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5100D4D516CA9E09004E2D5E /* ForceOrientationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForceOrientationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5100D4D816CA9E09004E2D5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5100D4DA16CA9E09004E2D5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5100D4DC16CA9E09004E2D5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5100D4E016CA9E09004E2D5E /* ForceOrientationTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ForceOrientationTest-Info.plist"; sourceTree = "<group>"; };
+		5100D4E216CA9E09004E2D5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5100D4E416CA9E09004E2D5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5100D4E616CA9E09004E2D5E /* ForceOrientationTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ForceOrientationTest-Prefix.pch"; sourceTree = "<group>"; };
+		5100D4E716CA9E09004E2D5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5100D4E816CA9E09004E2D5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5100D4EA16CA9E09004E2D5E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		5100D4EC16CA9E09004E2D5E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		5100D4EE16CA9E09004E2D5E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5100D4F516CA9E9A004E2D5E /* RotatingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatingNavigationController.h; sourceTree = "<group>"; };
+		5100D4F616CA9E9A004E2D5E /* RotatingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatingNavigationController.m; sourceTree = "<group>"; };
+		5100D4F816CA9EBA004E2D5E /* AllOrientationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllOrientationsViewController.h; sourceTree = "<group>"; };
+		5100D4F916CA9EBA004E2D5E /* AllOrientationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllOrientationsViewController.m; sourceTree = "<group>"; };
+		5100D4FB16CA9ED5004E2D5E /* LandscapeOrientationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeOrientationViewController.h; sourceTree = "<group>"; };
+		5100D4FC16CA9ED5004E2D5E /* LandscapeOrientationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeOrientationViewController.m; sourceTree = "<group>"; };
+		5100D4FE16CA9F65004E2D5E /* PortraitOrientationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortraitOrientationViewController.h; sourceTree = "<group>"; };
+		5100D4FF16CA9F65004E2D5E /* PortraitOrientationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortraitOrientationViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5100D4D216CA9E09004E2D5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5100D4D916CA9E09004E2D5E /* UIKit.framework in Frameworks */,
+				5100D4DB16CA9E09004E2D5E /* Foundation.framework in Frameworks */,
+				5100D4DD16CA9E09004E2D5E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5100D4CC16CA9E09004E2D5E = {
+			isa = PBXGroup;
+			children = (
+				5100D4DE16CA9E09004E2D5E /* ForceOrientationTest */,
+				5100D4D716CA9E09004E2D5E /* Frameworks */,
+				5100D4D616CA9E09004E2D5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5100D4D616CA9E09004E2D5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5100D4D516CA9E09004E2D5E /* ForceOrientationTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5100D4D716CA9E09004E2D5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5100D4D816CA9E09004E2D5E /* UIKit.framework */,
+				5100D4DA16CA9E09004E2D5E /* Foundation.framework */,
+				5100D4DC16CA9E09004E2D5E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5100D4DE16CA9E09004E2D5E /* ForceOrientationTest */ = {
+			isa = PBXGroup;
+			children = (
+				5100D4E716CA9E09004E2D5E /* AppDelegate.h */,
+				5100D4E816CA9E09004E2D5E /* AppDelegate.m */,
+				5100D4DF16CA9E09004E2D5E /* Supporting Files */,
+				5100D4F516CA9E9A004E2D5E /* RotatingNavigationController.h */,
+				5100D4F616CA9E9A004E2D5E /* RotatingNavigationController.m */,
+				5100D4F816CA9EBA004E2D5E /* AllOrientationsViewController.h */,
+				5100D4F916CA9EBA004E2D5E /* AllOrientationsViewController.m */,
+				5100D4FB16CA9ED5004E2D5E /* LandscapeOrientationViewController.h */,
+				5100D4FC16CA9ED5004E2D5E /* LandscapeOrientationViewController.m */,
+				5100D4FE16CA9F65004E2D5E /* PortraitOrientationViewController.h */,
+				5100D4FF16CA9F65004E2D5E /* PortraitOrientationViewController.m */,
+			);
+			path = ForceOrientationTest;
+			sourceTree = "<group>";
+		};
+		5100D4DF16CA9E09004E2D5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5100D4E016CA9E09004E2D5E /* ForceOrientationTest-Info.plist */,
+				5100D4E116CA9E09004E2D5E /* InfoPlist.strings */,
+				5100D4E416CA9E09004E2D5E /* main.m */,
+				5100D4E616CA9E09004E2D5E /* ForceOrientationTest-Prefix.pch */,
+				5100D4EA16CA9E09004E2D5E /* Default.png */,
+				5100D4EC16CA9E09004E2D5E /* Default@2x.png */,
+				5100D4EE16CA9E09004E2D5E /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5100D4D416CA9E09004E2D5E /* ForceOrientationTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5100D4F216CA9E09004E2D5E /* Build configuration list for PBXNativeTarget "ForceOrientationTest" */;
+			buildPhases = (
+				5100D4D116CA9E09004E2D5E /* Sources */,
+				5100D4D216CA9E09004E2D5E /* Frameworks */,
+				5100D4D316CA9E09004E2D5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ForceOrientationTest;
+			productName = ForceOrientationTest;
+			productReference = 5100D4D516CA9E09004E2D5E /* ForceOrientationTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5100D4CD16CA9E09004E2D5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Fingertips BV";
+			};
+			buildConfigurationList = 5100D4D016CA9E09004E2D5E /* Build configuration list for PBXProject "ForceOrientationTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5100D4CC16CA9E09004E2D5E;
+			productRefGroup = 5100D4D616CA9E09004E2D5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5100D4D416CA9E09004E2D5E /* ForceOrientationTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5100D4D316CA9E09004E2D5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5100D4E316CA9E09004E2D5E /* InfoPlist.strings in Resources */,
+				5100D4EB16CA9E09004E2D5E /* Default.png in Resources */,
+				5100D4ED16CA9E09004E2D5E /* Default@2x.png in Resources */,
+				5100D4EF16CA9E09004E2D5E /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5100D4D116CA9E09004E2D5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5100D4E516CA9E09004E2D5E /* main.m in Sources */,
+				5100D4E916CA9E09004E2D5E /* AppDelegate.m in Sources */,
+				5100D4F716CA9E9A004E2D5E /* RotatingNavigationController.m in Sources */,
+				5100D4FA16CA9EBA004E2D5E /* AllOrientationsViewController.m in Sources */,
+				5100D4FD16CA9ED5004E2D5E /* LandscapeOrientationViewController.m in Sources */,
+				5100D50016CA9F65004E2D5E /* PortraitOrientationViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5100D4E116CA9E09004E2D5E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5100D4E216CA9E09004E2D5E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5100D4F016CA9E09004E2D5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		5100D4F116CA9E09004E2D5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5100D4F316CA9E09004E2D5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ForceOrientationTest/ForceOrientationTest-Prefix.pch";
+				INFOPLIST_FILE = "ForceOrientationTest/ForceOrientationTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5100D4F416CA9E09004E2D5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ForceOrientationTest/ForceOrientationTest-Prefix.pch";
+				INFOPLIST_FILE = "ForceOrientationTest/ForceOrientationTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5100D4D016CA9E09004E2D5E /* Build configuration list for PBXProject "ForceOrientationTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5100D4F016CA9E09004E2D5E /* Debug */,
+				5100D4F116CA9E09004E2D5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5100D4F216CA9E09004E2D5E /* Build configuration list for PBXNativeTarget "ForceOrientationTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5100D4F316CA9E09004E2D5E /* Debug */,
+				5100D4F416CA9E09004E2D5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5100D4CD16CA9E09004E2D5E /* Project object */;
+}
