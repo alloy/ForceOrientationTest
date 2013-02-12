@@ -12,8 +12,3 @@ hacky and has an issue when you physically rotate the device after, which is
 pribably due to iOS internally not having updated the current orientation.
 
 The app and its issues can be seen in this video: http://cl.ly/3z2m2T3e401f
-
-### Thoughts
-
-* It might be possible to force the orientation by presenting a controller with
-  the required orientation modally and immediately remove it again.

@@ -1,18 +1,43 @@
 #import "RotatingNavigationController.h"
 
-static CGFloat
-angleOfOrientation(UIInterfaceOrientation orientation) {
-  switch (orientation) {
-    case UIInterfaceOrientationPortrait:
-      return 0;
-    case UIInterfaceOrientationPortraitUpsideDown:
-      return M_PI;
-    case UIInterfaceOrientationLandscapeLeft:
-      return M_PI * 1.5;
-    case UIInterfaceOrientationLandscapeRight:
-      return M_PI * 1.5;
+// Use a dummy class, because this workaround will also trigger calls to
+// `viewWillAppear:` and `viewDidAppear:`.
+@interface DummyController : UIViewController
+@property (assign) UIInterfaceOrientationMask supportedOrientations;
+@end
+@implementation DummyController
+- (instancetype)initWithSupportedInterfaceOrientations:(UIInterfaceOrientationMask)mask;
+{
+  if ((self = [super init])) {
+    _supportedOrientations = mask;
   }
+  return self;
 }
+
+- (void)viewWillAppear:(BOOL)animated;
+{
+  [super viewWillAppear:animated];
+  // NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)viewDidAppear:(BOOL)animated;
+{
+  [super viewDidAppear:animated];
+  // NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (BOOL)shouldAutorotate;
+{
+  return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations;
+{
+  return self.supportedOrientations;
+}
+
+@end
+
 
 @interface RotatingNavigationController ()
 @property (assign) BOOL shouldAskControllerToAutorotate;
@@ -28,52 +53,14 @@ angleOfOrientation(UIInterfaceOrientation orientation) {
   return self;
 }
 
-- (void)forceOrientationChangeIfNecessary:(UIInterfaceOrientationMask)supported;
-{
-  BOOL needsToRotate = NO;
-
-  switch (self.interfaceOrientation) {
-    case UIInterfaceOrientationPortrait:
-      needsToRotate = (supported & UIInterfaceOrientationMaskPortrait) != UIInterfaceOrientationMaskPortrait;
-      break;
-    case UIInterfaceOrientationPortraitUpsideDown:
-      needsToRotate = (supported & UIInterfaceOrientationMaskPortraitUpsideDown) != UIInterfaceOrientationMaskPortraitUpsideDown;
-      break;
-    case UIInterfaceOrientationLandscapeLeft:
-      needsToRotate = (supported & UIInterfaceOrientationMaskLandscapeLeft) != UIInterfaceOrientationMaskLandscapeLeft;
-      break;
-    case UIInterfaceOrientationLandscapeRight:
-      needsToRotate = (supported & UIInterfaceOrientationMaskLandscapeRight) != UIInterfaceOrientationMaskLandscapeRight;
-      break;
-  }
-
-  if (needsToRotate) {
-    UIInterfaceOrientation rotateTo;
-    CGRect frame;
-    if ((supported & UIInterfaceOrientationMaskPortrait) == UIInterfaceOrientationMaskPortrait) {
-      rotateTo = UIInterfaceOrientationPortrait;
-      frame = CGRectMake(0, 0, 768, 1024);
-    } else if ((supported & UIInterfaceOrientationMaskPortraitUpsideDown) == UIInterfaceOrientationMaskPortraitUpsideDown) {
-      rotateTo = UIInterfaceOrientationPortraitUpsideDown;
-      frame = CGRectMake(0, 0, 768, 1024);
-    } else if ((supported & UIInterfaceOrientationMaskLandscapeLeft) == UIInterfaceOrientationMaskLandscapeLeft) {
-      rotateTo = UIInterfaceOrientationLandscapeLeft;
-      frame = CGRectMake(0, 0, 768, 1024);
-    } else if ((supported & UIInterfaceOrientationMaskLandscapeRight) == UIInterfaceOrientationMaskLandscapeRight) {
-      rotateTo = UIInterfaceOrientationLandscapeRight;
-      frame = CGRectMake(0, 0, 1024, 768);
-    }
-
-    self.shouldAskControllerToAutorotate = NO;
-    [[UIApplication sharedApplication] setStatusBarOrientation:rotateTo];
-    self.view.transform = CGAffineTransformMakeRotation(angleOfOrientation(rotateTo));
-    self.view.frame = frame;
-  }
-}
-
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
 {
-  [self forceOrientationChangeIfNecessary:viewController.supportedInterfaceOrientations];
+  // TODO check if this needs to be forced for the root view controller as well.
+  if (self.viewControllers.count > 0) {
+    DummyController *dummy = [[DummyController alloc] initWithSupportedInterfaceOrientations:viewController.supportedInterfaceOrientations];
+    [self presentViewController:dummy animated:NO completion:NULL];
+    [dummy dismissViewControllerAnimated:NO completion:NULL];
+  }
   [super pushViewController:viewController animated:animated];
 }
 
@@ -82,20 +69,16 @@ angleOfOrientation(UIInterfaceOrientation orientation) {
 //- (UIViewController *)popViewControllerAnimated:(BOOL)animated;
 //{
   //UIViewController *viewController = self.viewControllers[self.viewControllers.count - 2];
-  //[self forceOrientationChangeIfNecessary:viewController.supportedInterfaceOrientations];
+  //DummyController *dummy = [[DummyController alloc] initWithSupportedInterfaceOrientations:viewController.supportedInterfaceOrientations];
+  //[self presentViewController:dummy animated:NO completion:NULL];
+  //[dummy dismissViewControllerAnimated:NO completion:NULL];
+
   //[super popViewControllerAnimated:animated];
 //}
 
-// Setting the status bar orientation *only* works if `shouldAutorotate`
-// returns `NO`.
 - (BOOL)shouldAutorotate;
 {
-  if (self.shouldAskControllerToAutorotate) {
-    return self.visibleViewController.shouldAutorotate;
-  } else {
-    self.shouldAskControllerToAutorotate = YES;
-    return NO;
-  }
+  return self.visibleViewController.shouldAutorotate;
 }
 
 - (NSUInteger)supportedInterfaceOrientations;
