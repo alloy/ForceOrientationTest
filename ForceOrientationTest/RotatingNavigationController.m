@@ -29,7 +29,6 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
 {
-  // TODO check if this needs to be forced for the root view controller as well.
   if (self.viewControllers.count > 0) {
     [self forceSupportedOrientation:viewController];
   }
