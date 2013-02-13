@@ -1,76 +1,44 @@
 #import "RotatingNavigationController.h"
 
 // Use a dummy class, because this workaround will also trigger calls to
-// `viewWillAppear:` and `viewDidAppear:`.
+// `viewWillAppear:` & `viewDidAppear:`, which might trigger side-effects in
+// the actual controller that the user wants displayed.
 @interface DummyController : UIViewController
-@property (assign) UIInterfaceOrientationMask supportedOrientations;
+@property (assign) NSUInteger supportedInterfaceOrientations;
 @end
 @implementation DummyController
-- (instancetype)initWithSupportedInterfaceOrientations:(UIInterfaceOrientationMask)mask;
-{
-  if ((self = [super init])) {
-    _supportedOrientations = mask;
-  }
-  return self;
-}
-
-- (void)viewWillAppear:(BOOL)animated;
-{
-  [super viewWillAppear:animated];
-  // NSLog(@"%s", __PRETTY_FUNCTION__);
-}
-
-- (void)viewDidAppear:(BOOL)animated;
-{
-  [super viewDidAppear:animated];
-  // NSLog(@"%s", __PRETTY_FUNCTION__);
-}
-
-- (BOOL)shouldAutorotate;
-{
-  return YES;
-}
-
-- (NSUInteger)supportedInterfaceOrientations;
-{
-  return self.supportedOrientations;
-}
-
+- (BOOL)shouldAutorotate; { return YES; }
 @end
 
 
 @interface RotatingNavigationController ()
-@property (assign) BOOL shouldAskControllerToAutorotate;
+@property (strong) DummyController *dummyController;
 @end
 
 @implementation RotatingNavigationController
 
-- (id)initWithRootViewController:(UIViewController *)rootViewController;
+- (void)forceSupportedOrientation:(UIViewController *)controller;
 {
-  if ((self = [super initWithRootViewController:rootViewController])) {
-    _shouldAskControllerToAutorotate = YES;
+  if (self.dummyController == nil) {
+    self.dummyController = [DummyController new];
   }
-  return self;
+  self.dummyController.supportedInterfaceOrientations = controller.supportedInterfaceOrientations;
+  [self presentViewController:self.dummyController animated:NO completion:NULL];
+  [self.dummyController dismissViewControllerAnimated:NO completion:NULL];
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
 {
   // TODO check if this needs to be forced for the root view controller as well.
   if (self.viewControllers.count > 0) {
-    DummyController *dummy = [[DummyController alloc] initWithSupportedInterfaceOrientations:viewController.supportedInterfaceOrientations];
-    [self presentViewController:dummy animated:NO completion:NULL];
-    [dummy dismissViewControllerAnimated:NO completion:NULL];
+    [self forceSupportedOrientation:viewController];
   }
   [super pushViewController:viewController animated:animated];
 }
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated;
 {
-  UIViewController *viewController = self.viewControllers[self.viewControllers.count - 2];
-  DummyController *dummy = [[DummyController alloc] initWithSupportedInterfaceOrientations:viewController.supportedInterfaceOrientations];
-  [self presentViewController:dummy animated:NO completion:NULL];
-  [dummy dismissViewControllerAnimated:NO completion:NULL];
-
+  [self forceSupportedOrientation:self.viewControllers[self.viewControllers.count - 2]];
   return [super popViewControllerAnimated:animated];
 }
 
